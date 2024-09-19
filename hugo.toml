@@ -1,9 +1,0 @@
-title = 'H2MAA'
-baseURL = 'https://fab.cba.mit.edu/classes/863.24/people/EmmaMarieOdom/'
-languageCode = 'en-us'
-theme = "ananke" 
-
-publishDir = '../EmmaMarieOdom'
-
-[params]
-    featured_image = "images/homepage-banner.jpg"
