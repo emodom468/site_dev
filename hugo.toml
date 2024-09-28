@@ -7,3 +7,9 @@ publishDir = '../EmmaMarieOdom'
 
 [params]
     featured_image = "images/homepage-banner.jpg"
+
+[[menu.main]]
+    name = "Weeks"
+    identifier = "weeks"
+    url = "/weeks/"
+    weight = 2

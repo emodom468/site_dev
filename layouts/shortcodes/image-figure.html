@@ -1,0 +1,30 @@
+{{ $imagePath := "" }}
+
+{{/* First, check if an image path was provided in the shortcode */}}
+{{ with .Get "src" }}
+  {{ $imagePath = . | absURL }}
+{{ else }}
+
+  {{/* If not, check for an image in the front matter */}}
+  {{ with .Page.Params.image }}
+    {{ $imagePath = . | absURL }}
+  {{ else }}
+
+    {{/* If no image is provided in the shortcode or front matter, use a default image */}}
+    {{ $imagePath = "images/about_me_profile.jpg" | absURL }}
+
+  {{ end }}
+{{ end }}
+
+{{/* Check for a caption provided in the shortcode, otherwise fallback to front matter */}}
+{{ $caption := .Get "caption" | default .Page.Params.caption | default "Default caption" }}
+
+{{ $size := .Get "size" | default "100%" }}
+{{ $align := .Get "align" | default "center" }}
+
+{{ if $imagePath }}
+  <figure style="text-align: {{ $align }};">
+    <img src="{{ $imagePath }}" alt="{{ $caption }}" style="width: {{ $size }};">
+    <figcaption>{{ $caption }}</figcaption>
+  </figure>
+{{ end }}
