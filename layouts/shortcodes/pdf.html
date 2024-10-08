@@ -1,0 +1,3 @@
+<object data="{{ .Get 0 }}" type="application/pdf" width="{{ .Get 2 | default "100%" }}" height="{{ .Get 3 | default "600px" }}">
+    <a href="{{ .Get 0 }}">{{ .Get 1 | default "Download the PDF" }}</a>.
+</object>
